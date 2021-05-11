@@ -35,4 +35,19 @@ function getHolidays($year){
     }
     return $holidays;
 }
+
+function display_to_Holidays($date,$Holidays_array) {
+    //第一引数は日付け"Y-m-d"型、第二引数には祝日の配列データ
+    //display_to_Holidays("Y-m-d","Y-m-d")→引数１と引数２の日付が一致すればその日の祝日名を取得する
+    if(array_key_exists($date,$Holidays_array)){
+        //array_key_exists関数を使用
+        //$dateが$Holidays_arrayに存在するか確認
+        //各日付と祝日の配列データを照らし合わせる
+
+        $holidays = "<br/>".$Holidays_array[$date];
+        //祝日が見つかれば祝日名を$holidaysに入れておく
+        return $holidays;
+    }
+}
+//その日の祝日名を取得
 ?>
